@@ -1,0 +1,213 @@
+/* ---------- Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; color: #111; background: #fff; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  border-bottom: 1px solid #e3e3e3;
+  background: #fff;
+  flex-wrap: wrap;
+}
+.logo { font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+.nav-links a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.icons span { cursor: pointer; font-size: 16px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid #eee;
+}
+.hero h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+.hero p {
+  margin-top: 10px;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ---------- Toolbar ---------- */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.toolbar a {
+  color: #555;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.toolbar select {
+  border: none;
+  font-size: 14px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ---------- Main Layout ---------- */
+.content {
+  display: flex;
+  padding: 40px 60px;
+  gap: 40px;
+}
+
+/* Sidebar */
+.filters {
+  width: 240px;
+  flex-shrink: 0;
+}
+.filter-group { margin-bottom: 25px; }
+.filter-group h3 {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.filter-group ul {
+  list-style: none;
+  color: #555;
+}
+.filter-group li {
+  font-size: 13px;
+  padding: 5px 0;
+}
+
+/* Product Grid */
+.product-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+.product-card {
+  text-align: center;
+}
+.img-box {
+  border: 1px solid #eee;
+  padding: 10px;
+  background: #fff;
+}
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.product-card h4 {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.product-card p {
+  color: #777;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #fafafa;
+  margin-top: 60px;
+  padding: 60px;
+}
+.newsletter {
+  text-align: center;
+}
+.newsletter h3 {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+.newsletter p {
+  margin-top: 8px;
+  color: #555;
+  font-size: 14px;
+}
+.newsletter-form {
+  margin-top: 14px;
+}
+.newsletter-form input {
+  padding: 10px;
+  width: 260px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.newsletter-form button {
+  padding: 10px 16px;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 40px;
+}
+.footer-columns h4 {
+  font-size: 13px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.footer-columns ul {
+  list-style: none;
+}
+.footer-columns li {
+  color: #555;
+  font-size: 13px;
+  padding: 4px 0;
+}
+.social li {
+  display: inline-block;
+  margin-right: 8px;
+}
+.copyright {
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .content { flex-direction: column; }
+  .filters { width: 100%; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+}
+@media (max-width: 768px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .navbar { padding: 15px 25px; }
+  .toolbar { padding: 15px 25px; }
+  .content { padding: 25px; }
+  .footer { padding: 30px; }
+}
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: repeat(1, 1fr); }
+  .newsletter-form input { width: 70%; }
+}
